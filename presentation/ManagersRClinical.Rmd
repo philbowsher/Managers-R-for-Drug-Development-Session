@@ -1,0 +1,398 @@
+---
+title: <span style="color:orange">Managing</span> <span style="color:#FFFFFF">R Programmers in Pharma</span>
+
+author: <span style="color:#FFFFFF">twitter:@rinpharma github:philbowsher</span>
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [ "include/rstudio.css" ]
+    nature:
+      countIncrementalSlides: yes
+      highlightLines: yes
+      highlightStyle: github
+      ratio: 16:9
+resource_files:
+  - include
+  - images
+---
+
+
+```{r, include=FALSE}
+rmarkdown::output_metadata$set(
+  rsc_output_files = list.files("images", recursive = TRUE, full.names = TRUE)
+)
+```
+
+
+class: subtitle-slide, white, middle, center
+
+# History
+
+---
+
+class: panel-narrow-slide, left
+
+# R
+- https://statfr.blogspot.com/2018/08/r-generation-story-of-statistical.html
+- https://cran.r-project.org/
+- https://github.com/tidyverse/ggplot2
+- http://hadley.nz/
+- https://www.nytimes.com/2009/01/07/technology/business-computing/07program.html?pagewanted=2
+- http://appliedpredictivemodeling.com/blog
+- https://shiny.rstudio.com/
+---
+
+class: panel-narrow-slide, left
+
+# FDA
+- https://channel9.msdn.com/Events/useR-international-R-User-conference/useR2016/Using-R-in-a-regulatory-environment-FDA-experiences
+- http://washstat.org/presentations/20181024/Schuette.pdf
+- https://www.cdisc.org/system/files/all/event/restricted/2019_Japan/16_AShapiro%2520CDISC%2520Japan%25202019%2520Presentation.pdf
+- https://www.accessdata.fda.gov/drugsatfda_docs/nda/2016/208573Orig1s000ClinPharmR.pdf
+- https://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/209296Orig1s000ClinPharmR.pdf
+---
+
+class: panel-narrow-slide, left
+
+# Tools
+- https://www.novartis.com/careers/career-search/job-details/295774BR
+- https://rinterface.com/shiny/talks/zurichR2020/index.html#slide=2
+- https://www.roche.com/careers/jobs/jobsearch/job.htm?id=E-202004-111441&locale=en&title=Data+Management+Engineer+II
+- https://www.biospace.com/job/2087510/clinical-trial-statistical-programmer-/
+---
+
+class: panel-narrow-slide, left
+
+# Tools Cont.
+- https://boards.greenhouse.io/dnli/jobs/2132890
+- https://lensa.com/data-scientistengineer-r-code-aws-big-data-jobs/san-francisco/jd/74536274507bc9adbc83babb7cc9dff9
+- https://jobsvaultglobal.com/jobs/r-shiny-programmer-remote-opportunity-san-rafael-california/146494872-2/
+---
+
+class: panel-narrow-slide, left
+
+# Working groups
+- https://www.phuse.eu/blog/working-groups-2019-end-of-year-summary
+- https://www.phuse.eu/standard-analyses-code-sharing
+- https://www.phusewiki.org/wiki/index.php?title=Standard_Analyses_%26_Code_Sharing
+- https://www.phusewiki.org/wiki/index.php?title=Best_Practices_for_Interactive_Analyses_for_Decision_Making_%26_Submissions
+- https://www.phusewiki.org/wiki/index.php?title=Links_to_Resources_and_Knowledge
+---
+
+
+class: panel-narrow-slide, left
+
+# Working groups...
+- https://rinpharma.github.io/website2018/program/using-r-in-a-regulatory-environment-some-fda-perspectives.html
+- https://www.meetup.com/Bay-Area-Biotech-Pharma-Statistics-Workshop-BBSW/events/265042071/
+- https://www.pharmar.org/white-paper/
+- https://github.com/rinpharma/rinpharma2019program
+---
+
+class: panel-narrow-slide, left
+
+# Training
+- https://www.psiweb.org/events/event-item/2020/06/11/default-calendar/psi-conference-webinar-psi-rss-prize-winners-session
+- https://medicine.yale.edu/cbds/train_collab/
+- RStudio Cloud
+---
+
+class: panel-narrow-slide, left
+
+# Tidyverse Intro
+- [Flatiron](https://rstudio.com/resources/rstudioconf-2020/flatironkitchen-how-we-overhauled-a-frankensteinian-sql-workflow-with-the-tidyverse/)
+- https://www.pharmasug.org/proceedings/2019/DV/PharmaSUG-2019-DV-169.pdf
+- https://www.linkedin.com/in/oleksandr-babych-777b00170/?originalSubdomain=ua
+- https://www.enar.org/meetings/spring2020/program/Education_Program.pdf
+- https://accp1.org/documents/annualmeeting/2019/2019ACCPProgram_Final.pdf
+- https://www.ohsu.edu/octri/data-visualization-r-and-ggplot2
+---
+
+
+class: panel-narrow-slide, left
+
+# Tidyverse
+- https://www.bicycletherapeutics.com/wp-content/uploads/Oct232019_MT1MMP_TRIPLEposter_FINAL.pdf
+- https://www.user2019.fr/talk_schedule/
+- https://www.user2019.fr/static/pres/lt252425.pdf
+- https://www.user2019.fr/static/pres/lt252371.pdf
+- https://www.pharmasug.org/proceedings/2018/BB/PharmaSUG-2018-BB22.pdf
+- http://www.mbswonline.com/upload/presentation_6-22-2018-14-25-55.introducing%20r_tidyverse%20to%20clinical%20statistical%20programming.pdf
+---
+
+
+class: subtitle-slide, white, middle, center
+
+# What is the Tidyverse?
+
+---
+
+
+
+class: panel-narrow-slide, left
+
+# Tidyverse is a...
+- a package of packages that...
+- share an underlying design philosophy, grammar, and data structures
+- https://www.tidyverse.org/
+---
+
+
+class: panel-narrow-slide, left
+
+# R for Data Science
+
+- [Tools needed in a typical data science project](http://r4ds.had.co.nz/introduction.html)
+
+
+---
+
+
+
+
+class: panel-narrow-slide, left
+
+
+# Remember dplyr single table verbs
+
+- filter() extract cases
+- arrange() reorder cases
+- group_by() group cases
+- select() extract variables
+- mutate() create new variables
+- summarise() summarise variables / create cases
+---
+
+class: panel-narrow-slide, left
+
+
+# Remember tidyr single table verbs
+
+- pivot_longer() Pivot data from wide to long
+- pivot_wider() Pivot data from long to wide
+- spread() Spread a key-value pair across multiple columns
+- gather() Gather columns into key-value pairs
+---
+
+class: panel-narrow-slide, left
+
+
+# The pipe operator %>%
+- Passes result on left into first argument of function on right
+- And then
+- mutate(babynames, percent = prop * 100)
+- babynames %>% mutate(percent = prop * 100)
+---
+
+class: panel-narrow-slide, left
+
+
+# Tibble Example
+
+```{r}
+library(tibble)
+#library("tidyverse")
+storms <-tribble(
+~storm, ~wind, ~pressure, ~date,
+"Alberto", 110, 1007, "2000-08-12",
+"Alex", 45, 1009, "1998-07-30",
+"Allison", 65, 1005, "1995-06-04",
+"Ana", 40, 1013, "1997-07-01",
+"Arlene", 50, 1010, "1999-06-13",
+"Arthur", 45, 1010, "1996-06-21"
+)
+
+# filter(storms, wind == 45)
+
+```
+---
+
+
+class: panel-narrow-slide, left
+
+
+# ggplot2
+
+- [Plotting system for R](https://rpubs.com/hadley/ggplot2-toolbox)
+- [Created by Hadley Wickham](http://ggplot2.org/)
+- [Powerful graphics language for creating elegant and complex plots](http://www.cookbook-r.com/Graphs/)
+- [ggplot2 is a graphing library for R. Use ggplot2 with Plotly to create interactive, online ggplot2 charts with D3.js.](https://plot.ly/ggplot2/)
+- plotly
+
+---
+
+class: panel-narrow-slide, left
+
+# Databases Landscape
+- db.rstuidio.com
+- http://db.rstudio.com/overview
+- https://db.rstudio.com/best-practices/select-interface/
+- DBI
+- dplyr
+- dbplyr 
+- odbc 
+- https://github.com/edgararuiz/db_best_practices_2018
+
+
+---
+
+class: panel-narrow-slide, left
+
+# DB writequeries using dplyr syntax
+- https://datascienceplus.com/working-with-databases-in-r/
+- https://rviews.rstudio.com/2017/10/18/database-queries-with-r/
+
+---
+
+class: panel-narrow-slide, left
+
+# Example
+- https://github.com/rstudio/webinars/tree/master/72-introduction-to-tidy-statistics-with-r
+- https://rstudio.cloud/project/381034
+
+---
+
+
+class: subtitle-slide, white, middle, center
+
+# Live Demo
+
+---
+
+
+
+class: panel-narrow-slide, left
+
+# Shiny
+- https://www.phusewiki.org/docs/2019_SDE_Shanghai/Xuan%20Yang.pdf
+- https://ryo-n7.github.io/2019-07-21-user2019-reflections/
+- https://cran.r-project.org/web/packages/safetyGraphics/vignettes/shinyUserGuide.html
+- https://www.efspi.org/Documents/Events/Events%202019/Reg%20Stats/Presentations/3_3_Falgreen.pdf
+- https://www.lexjansen.com/css-us/2019/PP28.pdf
+- https://www.bayes-pharma.org/wp-content/uploads/2019/06/Session-7-6-Anna-Pohlmann-REVISED.pdf
+---
+
+class: panel-narrow-slide, left
+
+# Shiny Cont.
+- https://www.lexjansen.com/phuse/2019/dv/DV07.pdf
+- https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1008489
+- https://github.com/AbbVie-ComputationalGenomics/genetic-evidence-approval
+- https://www.pharmasug.org/proceedings/2019/AD/PharmaSUG-2019-AD-048.pdf
+- https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.1732
+- https://cran.r-project.org/web/packages/gsDesign/index.html
+---
+
+class: subtitle-slide, white, middle, center
+
+# Live Demo
+
+---
+
+
+class: panel-narrow-slide, left
+
+# RMD
+- https://github.com/BBSW-org/BBSW2019/blob/master/Day%202%20(Nov%208)/3.%20Lightning%20talk%20II/2.%20dcivello-interactive_reports_in_r.pptx
+- https://rstudio.com/resources/rstudioconf-2020/r-for-graphical-clinical-trial-reporting/
+- https://www.themillerlab.io/post/flexdashboards/
+- https://www.pharmasug.org/proceedings/2020/DV/PharmaSUG-2020-DV-164.pdf
+---
+
+class: subtitle-slide, white, middle, center
+
+# Live Demo
+
+---
+
+class: panel-narrow-slide, left
+
+# Future
+- https://github.com/BBSW-org/R-meetup/blob/master/2019-11-06/Artificial%20Intelligence%20%26%20Analytical%20Innovation.pdf
+- https://blogs.rstudio.com/ai/posts/2018-01-29-dl-for-cancer-immunotherapy/
+---
+
+
+class: panel-narrow-slide, left
+
+# Validation
+- https://environments.rstudio.com/validation.html
+- https://cran.r-project.org/web/views/ClinicalTrials.html
+- https://www.r-project.org/doc/R-FDA.pdf
+- https://github.com/andyofsmeg/RValidation
+---
+
+
+class: panel-narrow-slide, left
+
+# Collaboration
+
+.pull-left[
+  # [R in Pharma](https://rinpharma.com)
+  ]
+.pull-right[ 
+  # [Pharma R PSI](https://pharmar.org)
+]
+
+---
+
+
+class: panel-narrow-slide, left
+
+# Clincal Tables
+- gt
+
+---
+
+
+class: subtitle-slide, white, middle, center
+
+# Appendix
+
+---
+
+
+
+
+class: panel-narrow-slide, left
+
+# Clinical Examples
+- https://therbootcamp.github.io/Intro2DataScience_2018Oct/_sessions/CaseStudies/Clinical_Data_Case_Study.html
+- https://github.com/therbootcamp/Intro2DataScience_2018Oct
+- https://github.com/bioinformatics-core-shared-training/r-intermediate/blob/master/2.dplyr-intro.Rmd
+
+---
+class: panel-narrow-slide, left
+
+# Clinical Examples
+- https://therbootcamp.github.io/Intro2DataScience_2018Oct/_sessions/Wrangling/Wrangling_practical.html
+- https://therbootcamp.github.io/Erfurt_2018June/_sessions/D1S2_Wrangling/Wrangling_practical_answers.html
+- https://therbootcamp.github.io/BaselRBootcamp_2018April/schedule
+
+---
+
+class: panel-narrow-slide, left
+
+# Other Examples
+- https://peerj.com/preprints/3163.pdf
+- https://dpastoor.github.io/simplest_bayes/dataset-creation.html
+- https://learnr.me/examples/ggplot_part1.html
+- https://rpubs.com/ledongnhatnam/242506
+---
+class: panel-narrow-slide, left
+
+# Clinical Examples
+- http://r-addict.com/2016/11/21/Optimal-Cutpoint-maxstat.html
+- http://www.rpubs.com/RedBeren/FL_hospital
+- https://nycdatascience.com/blog/student-works/exploring-response-biomarkers-clinical-trial/
+
+---
+
+class: panel-narrow-slide, left
+
+# And more examples : )
+- https://rpubs.com/ledongnhatnam/261629
+- https://datacarpentry.org/R-genomics/04-dplyr.html
+- https://github.com/datacarpentry/R-genomics/
+
+

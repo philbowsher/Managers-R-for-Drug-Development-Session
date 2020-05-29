@@ -1,0 +1,12 @@
+name: stocks
+title: Stocks
+username: phil
+account: phil
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 6058
+bundleId: 37195
+url: https://colorado.rstudio.com/rsc/content/6058/
+when: 1588791173.12343
+asMultiple: FALSE
+asStatic: FALSE
